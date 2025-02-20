@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleprompter Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Teleprompter Web</h1>
+            <button id="toggleMode">Modo Escuro</button>
+        </header>
+
+        <section id="inputSection">
+            <textarea id="textInput" placeholder="Cole seu texto aqui ou arraste um arquivo TXT..."></textarea>
+            <input type="file" id="fileInput" accept=".txt">
+            <button id="startTeleprompter">Iniciar Teleprompter</button>
+        </section>
+
+        <section id="settings">
+            <label for="fontSelect">Fonte:</label>
+            <select id="fontSelect">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Open Sans">Open Sans</option>
+            </select>
+
+            <label for="fontSize">Tamanho da Fonte:</label>
+            <input type="range" id="fontSize" min="16" max="50" value="30">
+
+            <label for="speedSelect">Velocidade:</label>
+            <select id="speedSelect">
+                <option value="slow">Lento</option>
+                <option value="medium" selected>Médio</option>
+                <option value="fast">Rápido</option>
+            </select>
+        </section>
+
+        <section id="teleprompter" class="hidden">
+            <p id="scrollText"></p>
+        </section>
+
+        <div id="controls">
+            <button id="pauseResume">Pausar</button>
+            <button id="mirrorMode">Modo Espelhado</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

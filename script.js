@@ -43,14 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
         startScrolling();
     });
 
-    function startScrolling() {
-        clearInterval(interval);
-        interval = setInterval(() => {
-            if (!isPaused) {
-                scrollText.style.transform = `translateY(-${scrollSpeed}px)`;
-            }
-        }, 50);
-    }
+  function startScrolling() {
+    clearInterval(interval);
+    let speed = speedSelect.value;
+    let scrollSpeed = speed === "slow" ? 0.5 : speed === "medium" ? 1 : 2;
+    
+    interval = setInterval(() => {
+        if (!isPaused) {
+            teleprompter.scrollTop += scrollSpeed; // Faz a rolagem vertical real
+        }
+    }, 30);
+}
 
     // Pausar e retomar rolagem
     pauseResume.addEventListener("click", () => {

@@ -29,10 +29,11 @@ textarea {
 
 #teleprompter {
     height: 60vh;
-    overflow: hidden;
+    overflow-y: auto;
     font-size: 30px;
     background: white;
     padding: 20px;
+    scroll-behavior: smooth; /* Rolagem suave */
 }
 
 .dark-mode {
